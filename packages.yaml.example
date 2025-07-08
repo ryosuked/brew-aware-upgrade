@@ -1,0 +1,31 @@
+categories:
+  highest_priority:
+    - git
+    - gh
+    - jq
+    - yq
+    - ruby-build
+    - node-build
+    - node
+    - pyenv
+    - go
+    - typescript
+    - gemini-cli
+  priority:
+    - deno
+    - docker-compose
+    - plantuml
+  large_size:
+    - aws-cdk
+    - awscli
+    - openjdk
+    - ffmpeg
+    - mysql-client@8.0
+    - openjdk@11
+    - python@3.13
+    - processing
+    - obsidian
+    - cursor
+    - windsurf
+    - figma
+    - processing

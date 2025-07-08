@@ -11,7 +11,7 @@
 - パッケージを YAML でカテゴリ分け（重要・通常・大容量）
 - `brew outdated` で更新対象を取得し、カテゴリごとにアップグレードを実施
 - 通信量を抑えるための `dry-run` や `verbose` モードを搭載
-- 設定ファイルは柔軟に検索（環境変数や `$HOME/.brewall` にも対応）
+- 設定ファイルは柔軟に検索（環境変数や `$HOME/.brew-aware-upgrade` にも対応）
 
 ---
 
@@ -36,12 +36,16 @@ brew-aware-upgrade -D -c large_size
 ## 🔧 インストール
 
 ```bash
-go install github.com/yourusername/brew-aware-upgrade@latest
+cd brew-aware-upgrade
+
+go install
 ```
 
 または手動ビルド:
 
 ```bash
+cd brew-aware-upgrade
+
 go build -o brew-aware-upgrade
 ```
 
@@ -79,9 +83,9 @@ categories:
 優先順:
 
 1. 実行ファイルと同じディレクトリ
-2. `$HOME/.brewall/packages.yaml`
+2. `$HOME/.brew-aware-upgrade/packages.yaml`
 3. カレントディレクトリ
-4. 環境変数 `BREWALL_CONFIG_PATHS` で指定されたディレクトリ群
+4. 環境変数 `BREWUP_CONFIG_PATHS` で指定されたディレクトリ群
 
 ---
 
@@ -89,7 +93,7 @@ categories:
 
 ```bash
 $ brew-aware-upgrade -D -c highest_priority
-Using config file: /Users/foo/.brewall/packages.yaml
+Using config file: /Users/foo/.brew-aware-upgrade/packages.yaml
 [VERBOSE] Executing: brew outdated --quiet --greedy
 [VERBOSE] Outdated packages: map[git:true curl:true]
 Upgrading highest_priority packages: [git curl]
